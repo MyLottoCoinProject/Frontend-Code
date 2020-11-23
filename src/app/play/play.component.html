@@ -1,0 +1,181 @@
+<div class="main-dark-version">
+    <!--  header-section start  -->
+    <common-header></common-header>
+    <!--  header-section start  -->
+    <!-- inner-page-banner start -->
+    <common-banner [currentComponent]="activeUrl" [pageTitle]="pageTitle" [backgroundImage] = "backgroundImage"></common-banner>
+    <!-- inner-page-banner end -->
+    <!-- work-steps-section strat -->
+    <section class="work-steps-section section-padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <div class="section-header text-center">
+                        <p>To play Lottery, simply select five main numbers from 1-69 and a single Powerball number from
+                            1-26. You can choose your numbers manually, or with the Quick Pick option.</p>
+
+                        <p>You can add up to 10 entries per ticket and when you feel lucky with your numbers, click
+                            'Buy' and you will be shown an ETH address with the exact amount to transfer. Once the
+                            transfer is done, your tickets and numbers are automatically entered and recorded in
+                            Ethereum smart contract for that specific draw.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <app-workstepsection></app-workstepsection>
+        </div>
+    </section>
+    <!-- work-steps-section end -->
+    <!-- reward-section start -->
+    <section class="reward-section section-padding border-top has_bg_image" style="background-image:url(assets/images/03.jpg)">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <div class="section-header text-center">
+                        <h2 class="section-title">Lucky-Rewards</h2>
+                        <p>My Lotto Coin offers you the most impressive and innovative crypto lotto reward. How would
+                            you feel with an attractive and risk free offer that provide a parmanent passive income?</p>
+                        <p>My Crypto Lotto is the first of its kind to empower players to be always a part of the game
+                            and win.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row m-bottom-not-30">
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="reward-item text-center">
+                        <div class="icon">
+                            <img src="assets/images/svg-icons/reward/2.svg" alt="image">
+                        </div>
+                        <div class="content">
+                            <h3 class="title">Buy 10 tickets per entry</h3>
+                            <p>My Lotto Coin offers a limited promotion program. For every 10 tickets purchased at one
+                                time, win or not, you are eligible to receive MYL tokens.</p>
+                        </div>
+                    </div>
+                </div><!-- reward-item end-->
+                <div class="col-lg-4 col-md-6">
+                    <div class="reward-item text-center">
+                        <div class="icon">
+                            <img src="assets/images/svg-icons/reward/3.svg" alt="image">
+                        </div>
+                        <div class="content">
+                            <h3 class="title">Receive MYL tokens</h3>
+                            <p>Lotto Players instantly receive 10 MYL tokens in their ETH wallet (the same ETH wallet
+                                address the payment made to purchase the tickets).</p>
+                        </div>
+                    </div>
+                </div><!-- reward-item end-->
+                <div class="col-lg-4 col-md-6">
+                    <div class="reward-item text-center">
+                        <div class="icon">
+                            <img src="assets/images/svg-icons/reward/1.svg" alt="image">
+                        </div>
+                        <div class="content">
+                            <h3 class="title">Get rewards in ETH</h3>
+                            <p>MYL token holders (100 MYL and above) receive a 10% commission of revenue on total
+                                lottery tickets sold on the My Lotto Coin platform every 90 days.</p>
+                        </div>
+                    </div>
+                </div><!-- reward-item end-->
+            </div>
+        </div>
+    </section>
+    <!-- reward-section end -->
+    <!-- work-steps-section2 strat -->
+    <section class="work-steps-section border-top section-padding section-bg">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <div class="section-header text-center">
+                        <h2 class="title">Your ETH 0.01 goes to</h2>
+                        <p></p>
+                        <div id="piechart"></div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- work-steps-section2 end -->
+    <!-- prizes-breakdown-section strat -->
+    <section class="work-steps-section section-padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <div class="section-header text-center">
+                        <h2 class="title">Prize Breakdown</h2>
+                        <p></p>
+                        <table style="color:white;">
+                            <tr>
+                                <th>Prize</th>
+                                <th>Match</th>
+                                <th>Payout percentage of prize pool</th>
+                            </tr>
+                            <tr>
+                                <td>1st Prize</td>
+                                <td>5+PB</td>
+                                <td>Jackpot (88.8%)</td>
+                            </tr>
+                            <tr>
+                                <td>2nd Prize</td>
+                                <td>5</td>
+                                <td>8.88%</td>
+                            </tr>
+                            <tr>
+                                <td>3rd Prize</td>
+                                <td>4+PB</td>
+                                <td>1.88%</td>
+                            </tr>
+                            <tr>
+                                <td>4th Prize</td>
+                                <td>4</td>
+                                <td>0.22%</td>
+                            </tr>
+                            <tr>
+                                <td>5th Prize</td>
+                                <td>3+PB</td>
+                                <td>0.22%</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- prizes-breakdown-section end -->
+    <!-- question-section start -->
+    <section class="question-section border-top section-padding section-bg">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-4">
+                    <div class="thumb text-lg-right text-center">
+                        <img src="assets/images/elements/faq.png" alt="image">
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="content">
+                        <h2 class="title">If you have any questions</h2>
+                        <p>Your privacy and security is the utmost priority. Hence, registering an account is not
+                            required to protect your anonimity. Some most commonly asked lotto questions are answered.
+                        </p>
+                        <a [routerLink]="['/faq']" class="cmn-btn">Check FAQs</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- question-section end -->
+    <!-- footer-section start -->
+    <common-footer></common-footer>
+    <!-- footer-section end -->
+    <!-- scroll-to-top start -->
+    <div class="scroll-to-top">
+        <span class="scroll-icon">
+            <i class="fa fa-angle-up"></i>
+        </span>
+    </div>
+    <!-- scroll-to-top end -->
+</div>

@@ -1,0 +1,141 @@
+<!-- <app-shared></app-shared> -->
+<div class="main-dark-version">
+  <!--  header-section start  -->
+  <common-header></common-header>
+  <!--  header-section end  -->
+  <!-- inner-page-banner start -->
+  <!-- <section class="inner-page-banner has_bg_image" data-background="assets/images/02.jpg" [ngStyle]="{'background-image':'url('+ backgroundImage +')'}">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-12">
+                  <div class="inner-page-banner-area">
+                      <h1 class="page-title">Latest Lottery Results</h1>
+                      <nav aria-label="breadcrumb" class="page-header-breadcrumb">
+                          <ol class="breadcrumb">
+                              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                              <li class="breadcrumb-item">results</li>
+                          </ol>
+                      </nav>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section> -->
+  <common-banner [currentComponent]="activeUrl" [pageTitle]="pageTitle" [backgroundImage]="backgroundImage"></common-banner>
+  <!-- inner-page-banner end -->
+  <!-- lottery-result-section start -->
+  <section class="lottery-result-section section-padding">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="section-header text-center">
+            <p>
+             The results are the official drawing results of US Powerball last drawing
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-mb-15">
+        <div class="col-lg-12">
+          <div class="latest-result-item">
+            <div class="latest-result-item-header d-flex align-items-center justify-content-between">
+              <div class="icon"><img src="assets/images/elements/jackpot-1.png" alt="image"></div>
+              <div class="btn-area">
+                <a [routerLink]="['/play']" class="cmn-btn">Play Now!</a>
+              </div>
+            </div>
+            <div class="latest-result-item-body d-flex align-items-center justify-content-between">
+              <div class="winner-num">
+                <span class="winner-num-title">Winning Numbers ({{lastEndTime}})</span>
+                <ul class="number-list">
+                  <li class="active">{{winnerNumber1}}</li>
+                  <li class="active">{{winnerNumber2}}</li>
+                  <li class="active">{{winnerNumber3}}</li>
+                  <li class="active">{{winnerNumber4}}</li>
+                  <li class="active">{{winnerNumber5}}</li>
+                  <li class="activered">{{winnerNumber6}}</li>
+                </ul>
+              </div>
+              <div class="next-jack-amount">
+                <span>Next estimated jackpot</span>
+                <span class="amount">ETH {{JackpotPrice}}</span>
+              </div>
+            </div>
+            <div class="latest-result-item-footer">
+              <div class="text-center">Countdown to the next drawing &nbsp;&nbsp;<i class="fa fa-hourglass-half"></i>{{nextDrawDate}}</div>
+            </div>
+          </div>
+        </div><!-- latest-result-item end -->
+        <div class="col-lg-12">
+          <div class="winner-part">
+            <h3 class="block-title">Winners and Payouts</h3>
+            <div class="winner-list">
+              <div class="winner-single">
+                <!--<div class="winner-header" *ngFor="let data of OurWinnerData" style="border-bottom:1px solid gray">
+                  <span class="name">{{data.Address}}</span>
+                  <span class="prize-amount" style="margin-left:40px;"> {{data.Amount}}</span>
+                  <span class="name" style="float: right;">
+                    <a target="_blank" style="margin-top:10px;" href='https://ropsten.etherscan.io/address/{{data.Address}}'><span class="fa fa-edit"></span></a>
+                  </span>
+                </div>-->
+                <div>
+                  <table style="width:100%">
+                    <tr *ngFor="let data of OurWinnerData">
+                      <td><span class="name">{{data.Address}}</span></td>
+                      <td><span class="prize-amount"> {{data.Amount}}</span></td>
+                      <td>
+                        <span class="name" style="float: right;height:25px;width:25px;">
+                          <a target="_blank" style="margin-top:10px;" href='https://mainnet.etherscan.io/address/{{data.Address}}'><span class="icon"><img src="assets/images/etherScanIcon.png" alt="image"></span></a>
+                        </span>
+                      </td>
+                    </tr>
+
+                    <tr *ngIf="OurWinnerData.length==0">
+                      <td class="text-center"><span class="name">No Winner in last session</span></td>
+                    </tr>
+                  </table>
+                </div>
+                <!--<h5 class="prize-amount">ETH 8888</h5>-->
+              </div><!-- winner-single end -->
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- lottery-result-section end -->
+  <!-- question-section start -->
+  <section class="question-section border-top section-padding section-bg">
+    <div class="container">
+      <div class="row justify-content-between">
+        <div class="col-lg-4">
+          <div class="thumb text-lg-right text-center">
+            <img src="assets/images/elements/faq.png" alt="image">
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="content">
+            <h2 class="title">If you have any questions</h2>
+            <p>
+              Your privacy and security is the utmost priority. Hence, registering an account is not
+              required to protect your anonimity. Some most commonly asked lotto questions are answered.
+            </p>
+            <a [routerLink]="['/faq']" class="cmn-btn">Check FAQs</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- question-section end -->
+  <!-- footer-section start -->
+  <common-footer></common-footer>
+  <!-- footer-section end -->
+</div>
+
+<style>
+  table td {
+    padding: 2px 0;
+  }
+</style>

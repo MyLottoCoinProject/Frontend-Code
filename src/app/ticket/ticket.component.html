@@ -1,0 +1,137 @@
+<div class="main-dark-version">
+    <!--  header-section start  -->
+    <common-header></common-header>
+    <!--  header-section start  -->
+    <!-- inner-page-banner start -->
+    <common-banner [currentComponent]="activeUrl" [pageTitle]="pageTitle" [backgroundImage] = "backgroundImage"></common-banner>
+    <!-- inner-page-banner end -->
+    <!-- single-categories-play-section start -->
+    <section class="single-categories-play-section section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="single-cat-play-area">
+                        <div class="single-header d-flex justify-content-between">
+                            <div class="left d-flex">
+                                <div class="icon">
+                                    <img src="assets/images/elements/jackpot-1.png" alt="">
+                                </div>
+                                <div class="content">
+                                    <h3 class="title">My Lotto Coin (US Powerball)</h3>
+                                    <span class="amount">ETH {{JackpotPrice}}</span>
+                                </div>
+                            </div>
+                            <div class="right text-right">
+                              <span class="draw-days">{{nextDrawDate}}</span>
+                              <div class="header-btn-area">
+                                <button type="button" id="quick-pick-all" (click)="randomNumberPick()">Quick Pick All</button>
+                                <button (click)="addItem()" type="button" id="add-item"><i class="fa fa-plus"></i></button>
+                                <button (click)="removeAll($event)" type="button" id="delete-item"><i class="fa fa-trash"></i></button>
+                                <button (click)="clearAllTicket()" type="button" id="delete-item"><i class="fa fa-times"></i></button>
+                              </div>
+                              <span class="draw-days">Total tickets {{this.TopicNames.length}} / 10</span>
+                            </div>
+                        </div><!-- single-header end -->
+                        <div class="single-body">
+                            <div class="single-body-inner d-flex">
+                                <div class="play-card" *ngFor="let tpname of TopicNames; let i = index" [attr.data-index]="i" [attr.data-val]="tpname">
+                                    <div id="playcard-wrap-{{i}}" data-id="playcard-wrap-{{i}}" data-value="{{play-val-tpname}}">
+                                    <button type="button" class="close-play-card" *ngIf="i != 0 ">
+                                        <i (click)="currentcardremove($event)" class="fa fa-times"></i>
+                                    </button>
+                                    <div class="play-card-inner text-center">
+                                        <div class="play-card-header">
+                                            <span class="number-amount">Pick 5 Numbers</span>
+                                            <div class="header-btn-area">
+                                                <button type="button" (click)="singleRandomNumberPick($event, i + 1);"
+                                                    id="quick-pick1">quick pick</button>
+                                                <button type="button" id="clear-pick1" (click)="onClearClick($event, i + 1)">clear</button>
+                                            </div>
+                                        </div>
+                                        <div class="play-card-body">
+                                            <ul class="number-list multiple-number-list" id="number-lp-{{tpname}}">
+
+                                            <li *ngFor="let item of [].constructor(69); let i = index" (click)="onPickNumberClick($event)" [ngClass]="[DisabledExistKey(i + 1,tpname),Randomnumberactive(tpname,i + 1)]">
+                                            {{i + 1}}</li>
+                                            </ul>
+                                            <span class="add-more-text">Select PowerBall Number</span>
+                                            <ul class="number-list single-num-list" id="singlenumber-lp-{{tpname}}">
+                                                <li *ngFor="let item of [].constructor(26); let i = index" (click)="onSinglePickNumberClick($event)" [ngClass]="[DisabledSingleExistKey(i + 1),RandomSingleActive(tpname,i+1)]">
+                                                {{i + 1}}</li>
+                                             </ul>
+                                        </div>
+                                        <div class="play-card-footer">
+                                            <p class="play-card-footer-text">Selected Numbers:</p>
+                                            <div class="d-flex">
+                                                <div class="selected-numbers" id="total-selected-number-{{tpname}}">
+                                                </div>
+                                                <div class="selected-numbers" id="single-selected-number-{{tpname}}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!-- play-card end -->
+                            </div>
+
+
+                            </div>
+                        </div><!-- single-body end -->
+
+                        <div class="single-footer d-flex justify-content-between">
+                            <div class="left">
+
+                            </div>
+                            <div class="right d-flex justify-content-between">
+                                <div class="content">
+
+                                </div>
+                                <div class="card-cart-btn-area">
+                                  <!--pos-fix-->
+                                  <a (click)="sendTicketPay()" class="btn single-cart-btn">
+                                    <span class="single-cart-amount" id="ETH_seleced">ETH {{ETH_Button_ShowVAl}}</span>
+                                    pay now
+                                  </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- single-categories-play-section end -->
+    <!-- footer-section start -->
+    <common-footer></common-footer>
+    <!-- footer-section end -->
+</div>
+
+<button id="trbutton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+        style="display:none;">
+</button>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header" style="border-bottom: 1px solid lightgrey">
+          <h5 class="modal-title" id="exampleModalLabel">Transaction Successfull</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body text-center p-4">
+
+            <label style="font-size: 18px;
+            padding: 6px;
+            border: 1px solid;
+            font-weight: bold;">Transaction Hash</label>
+            <h6 class="mb-3" style="word-wrap: break-word;color: rgb(0 0 0 / 55%);">{{transactionHashAfterTrans}}</h6>
+            <button type="button" class="btn btn-primary"><a target="_blank" href='http://mainnet.etherscan.io/tx/{{transactionHashAfterTrans}}'>View on Etherscan</a></button>
+        </div>
+        <!-- <div class="modal-footer" style="border: none">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div> -->
+      </div>
+    </div>
+  </div>

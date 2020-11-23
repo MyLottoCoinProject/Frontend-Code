@@ -1,0 +1,352 @@
+<div class="main-dark-version">
+  <!-- Start Header -->
+  <common-header></common-header>
+  <!-- End Header-->
+  <!-- banner-section start -->
+  <section class="banner-section">
+    <div class="banner-elements-part has_bg_image" [ngStyle]="{'background-image': 'url(' + backgroundImage + ')'}">
+      <div class="element-one"><img src="assets/images/elements/box.png" alt="vector-image"></div>
+
+      <div class="element-two"><img src="assets/images/elements/car.png" alt="vector-image"></div>
+
+      <div class="element-three"><img src="assets/images/elements/chart.png" alt="vector-image"></div>
+
+      <div class="element-four"><img src="assets/images/elements/dollars.png" alt="vector-image"></div>
+
+      <div class="element-five"><img src="assets/images/elements/laptop.png" alt="vector-image"></div>
+
+      <div class="element-six"><img src="assets/images/elements/money-2.png" alt="vector-image"></div>
+
+      <div class="element-seven"><img src="assets/images/elements/person.png" alt="vector-image"></div>
+
+      <div class="element-eight"><img src="assets/images/elements/person-2.png" alt="vector-image"></div>
+
+      <div class="element-nine"><img src="assets/images/elements/power.png" alt="vector-image"></div>
+    </div>
+    <div class="banner-content-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="banner-content">
+              <h1 class="title">Be always a part of game and win</h1>
+              <p>My Lotto Coin is the world’s first <u>Fully Decentralized</u> and <u>Transparent</u> cryptocurrency
+                lottery operated by an Ethereum smart contract which makes it the most trusted and secured lottery in
+                the world.</p>
+              <a [routerLink]="['/ticket']" class="cmn-btn">buy ticket now!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- banner-section end -->
+  <!-- lottery-timer-section start -->
+  <section class="lottery-timer-section">
+    <div class="container">
+      <div class="row justify-content-between">
+        <div class="col-xl-5">
+          <div class="timer-content">
+            <h3 class="title">Pick, Pay, and Play</h3>
+            <p>Instantaneous play with no sign up and no prior deposit!</p>
+          </div>
+        </div>
+        <div class="col-xl-5 text-center">
+          <div class="timer-part">
+            <div class="clock"></div>
+          </div>
+        </div>
+        <div class="col-xl-2">
+          <div class="link-area text-center">
+            <a [routerLink]="['/play']" class="border-btn">How To Play</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- lottery-timer-section end -->
+  <!-- jackpot-section start -->
+  <section class="jackpot-section section-padding">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <div class="section-header text-center">
+            <h2 class="section-title">Lottery Jackpots</h2>
+            <p>Choose from the cyrpto-lotteries and try for a chance to win big</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-6">
+
+        </div><!-- jackpot-item end -->
+        <div class="col-lg-4 col-md-6">
+          <div class="jackpot-item text-center">
+            <img src="assets/images/elements/jackpot-1.png" alt="image">
+            <span class="amount">My Lotto Coin</span>
+            <h5 class="title">(US Powerball)</h5>
+            <p class="next-draw-time">Next Drawing : {{nextDrawDate}}<span id="remainTime1"></span></p>
+            <p class="mt-2">Countdown to Drawing</p>
+            <p>{{timeToDraw}}</p>
+            <a [routerLink]="['/ticket']" class="cmn-btn">play now!</a>
+          </div>
+        </div><!-- jackpot-item end -->
+        <div class="col-lg-4 col-md-6">
+
+        </div><!-- jackpot-item end -->
+        <div class="col-lg-12 text-center">
+          <a [routerLink]="['/result']" class="text-btn">see all result</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- jackpot-section start -->
+
+  <!-- lottery-result-section start -->
+  <section class="lottery-result-section section-padding has_bg_image d-flex align-items-center" style="background-image:url('assets/images/dark-bg-one.jpg')">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-7">
+          <div class="section-header text-center">
+            <h2 class="section-title">Latest Lottery Results</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="lottery-winning-num-part">
+            <div class="lottery-winning-num-table">
+              <h3 class="block-title">lottery winning numbers</h3>
+              <div class="lottery-winning-table">
+                <table>
+                  <thead>
+                    <tr>
+                      <th class="name">lottery</th>
+                      <th class="date">draw date</th>
+                      <th class="numbers">winning numbers</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+                    <tr>
+                      <td>
+                        <div class="winner-details"><span class="winner-name">My Lotto Coin (US Powerball)</span></div>
+                      </td>
+                      <td><span class="winning-date">{{lastEndTime}}</span></td>
+                      <td>
+                        <ul class="number-list">
+                          <li class="active">{{winnerNumber1}}</li>
+                          <li class="active">{{winnerNumber2}}</li>
+                          <li class="active">{{winnerNumber3}}</li>
+                          <li class="active">{{winnerNumber4}}</li>
+                          <li class="active">{{winnerNumber5}}</li>
+                          <li class="activered">{{winnerNumber6}}</li>
+                        </ul>
+                      </td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-12 text-center">
+          <a [routerLink]="['/result']" class="text-btn">See the latest results</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- lottery-result-section end -->
+
+  <!-- choose-us-section start -->
+  <section class="choose-us-section section-padding">
+    <div class="choose-us-image"><img src="assets/images/elements/mouse.png" alt="image"></div>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <div class="section-header text-center">
+            <h2 class="section-title">Why My Lotto Coin?</h2>
+            <p>My Lotto Coin makes playing the world's largest cyrpto-lotteries easy and fun.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-9">
+          <div class="row mt-mb-15">
+            <div class="col-lg-4 col-sm-6">
+              <div class="choose-item text-center">
+                <div class="front">
+                  <div class="icon">
+                    <img src="assets/images/svg-icons/choose-us-icons/1.svg" alt="icon"></div>
+                  <h4 class="title">World Record Jackpot</h4>
+                </div>
+                <div class="back">
+                  <p>85% of lottery ticket sales go to the prize pool. My Lotto Coin allocates the largest percentage
+                    to the jackpot and winners than any traditional and online lottery around the world.</p>
+                </div>
+              </div>
+            </div><!-- choose-item end -->
+            <div class="col-lg-4 col-sm-6">
+              <div class="choose-item text-center">
+                <div class="front">
+                  <div class="icon">
+                    <img src="assets/images/svg-icons/choose-us-icons/2.svg" alt="icon"></div>
+                  <h4 class="title">Transparent<br />&nbsp;</h4>
+                </div>
+                <div class="back">
+                  <p>The Ethereum Smart contract is public, and anyone with Internet access can see the source code,
+                    payments, Balance, and prize payouts and all transactions at all time.</p>
+                </div>
+              </div>
+            </div><!-- choose-item end -->
+            <div class="col-lg-4 col-sm-6">
+              <div class="choose-item text-center">
+                <div class="front">
+                  <div class="icon">
+                    <img src="assets/images/svg-icons/choose-us-icons/3.svg" alt="icon">
+                  </div>
+                  <h4 class="title">Reliable<br />&nbsp;</h4>
+                </div>
+                <div class="back">
+                  <p>Instant payments are guaranteed by smart contract with no human or third party involvement,
+                    benefiting the safe and secure blockchain environment.</p>
+                </div>
+              </div>
+            </div><!-- choose-item end -->
+            <div class="col-lg-4 col-sm-6">
+              <div class="choose-item text-center">
+                <div class="front">
+                  <div class="icon">
+                    <img src="assets/images/svg-icons/choose-us-icons/4.svg" alt="icon">
+                  </div>
+                  <h4 class="title">Instant Payouts<br />&nbsp;</h4>
+                </div>
+                <div class="back">
+                  <p>Payouts are instantly in ETH to your ETH wallet address; the same ETH wallet address the payment
+                    was made to purchase the tickets, without any need to claim.</p>
+                </div>
+              </div>
+            </div><!-- choose-item end -->
+            <div class="col-lg-4 col-sm-6">
+              <div class="choose-item text-center">
+                <div class="front">
+                  <div class="icon">
+                    <img src="assets/images/svg-icons/choose-us-icons/5.svg" alt="icon">
+                  </div>
+                  <h4 class="title">Incentives<br />&nbsp;</h4>
+                </div>
+                <div class="back">
+                  <p>For every 10 tickets purchased in one time, you will automatically receive 10 MYL tokens dropped
+                    to your ETH wallet by the smart contract.<a href="http://www.mylottocoin.io">Learn about MYL.</a>
+                  </p>
+                </div>
+              </div>
+            </div><!-- choose-item end -->
+            <div class="col-lg-4 col-sm-6">
+              <div class="choose-item text-center">
+                <div class="front">
+                  <div class="icon">
+                    <img src="assets/images/svg-icons/choose-us-icons/6.svg" alt="icon">
+                  </div>
+                  <h4 class="title">Anonymous<br />&nbsp;</h4>
+                </div>
+                <div class="back">
+                  <p>Unlike traditional and online lotteries, My Lotto Coin winners remain anonymous and no identity
+                    can be exposed at any stage. No sign-up/ registration is required.</p>
+                </div>
+              </div>
+            </div><!-- choose-item end -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- choose-us-section end -->
+
+  <!-- work-steps-section strat -->
+  <section class="work-steps-section section-padding border-top">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-7">
+          <div class="section-header text-center">
+            <h2 class="section-title">how it works</h2>
+            <p>My Lotto Coin is the most secure and transparent platform to play crypto-official lotteries from anywhere in the world.</p>
+          </div>
+        </div>
+      </div>
+      <app-workstepsection></app-workstepsection>
+    </div>
+  </section>
+  <!-- work-steps-section strat -->
+
+  <!-- online-ticket-section start -->
+  <section class="online-ticket-section section-padding has_bg_image" style="background-image:url('assets/images/dark-bg-two.jpg')">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="section-header text-center">
+            <h2 class="section-title">Buy Lottery Tickets Online</h2>
+            <p>Choose your lucky numbers and buy the ticket safely and securely via your own ETH wallet.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="online-ticket-table-part">
+            <div class="online-ticket-table">
+              <h3 class="block-title">Select your winning lottery numbers</h3>
+              <div class="online-ticket-table-wrapper">
+                <table>
+                  <thead>
+                    <tr>
+                      <th class="name">lottery</th>
+                      <th class="jackpot">jackpot</th>
+                      <th class="price">price</th>
+                      <th class="draw-time">Countdown to drawing</th>
+                      <th class="status">play now</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+                    <tr>
+                      <td>
+                        <div class="winner-details"><span class="winner-name">My Lotto Coin Powerball</span></div>
+                      </td>
+                      <td>
+                        <span class="jackpot-price">ETH {{JackpotPrice}}</span>
+                      </td>
+                      <td>
+                        <span class="price">ETH {{price}}</span>
+                      </td>
+                      <td>
+                        <div class="draw-timer" style="color: white;">{{timeToDraw}}</div>
+                      </td>
+
+                      <td>
+                        <a [routerLink]="['/ticket']" class="cmn-btn">buy ticket</a>
+                      </td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- online-ticket-section end -->
+  <!-- footer-section start -->
+  <common-footer></common-footer>
+  <!-- footer-section end -->
+</div>
+<!-- scroll-to-top start -->
+<div class="scroll-to-top">
+  <span class="scroll-icon">
+    <i class="fa fa-angle-up"></i>
+  </span>
+</div>
+<!-- scroll-to-top end -->

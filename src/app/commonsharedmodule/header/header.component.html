@@ -1,0 +1,26 @@
+<header class="header-section" (scroll)="onWindowScroll($event);" id="main-header-page">
+  <div class="header-bottom">
+      <div class="container-fluid">
+          <nav class="navbar navbar-expand-xl ">
+              <a class="site-logo site-title" [routerLink]="['/']"><img src="assets/images/logo.png" alt="site-logo"></a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse"
+                  data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                  aria-label="Toggle navigation">
+                  <span class="menu-toggle"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav main-menu ml-auto d-flex flex-wrap align-items-center">
+                      <li><a [routerLink]="['/']">Home</a></li>
+                      <li><a [routerLink]="['/ticket']">buy ticket</a></li>
+                      <li><a [routerLink]="['/play']">how to play</a></li>
+                      <li><a [routerLink]="['/result']">results</a></li>
+                      <li><a [routerLink]="['/faq']">faq</a></li>
+                      <li><a [routerLink]="['/about']">about us</a></li>
+                      <li><a (click)="initMetaMask()" class="btn btn-primary cm-top-btn mt-0 p-2">{{metaMaskStatus}}</a></li>
+                  </ul>
+              </div>
+          </nav>
+              
+      </div>
+  </div>
+</header>
